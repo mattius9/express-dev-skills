@@ -14,7 +14,15 @@ function getOne(index){
     return skills.find( ({id}) => id == index);
 }
 
+function addSkill(skill,difficulty){
+    skill.id = skills[skills.length-1].id+1;
+    skill.learned = false;
+    difficulty = skill.difficulty;
+    skills.push(skill);
+}
+
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    addSkill
 }

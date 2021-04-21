@@ -11,7 +11,19 @@ function getSkill(req,res){
         skill: Skill.getOne(req.params.id)
     })
 }
+
+function addForm(req,res){
+    res.render('skills/addSkill');
+}
+
+function addSkill(req,res){
+    console.log(req.body);
+    Skill.addSkill(req.body);
+    res.redirect('/skills');
+}
 module.exports = {
     getAllSkills,
-    getSkill
+    getSkill,
+    addForm,
+    addSkill
 }
