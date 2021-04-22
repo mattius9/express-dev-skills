@@ -17,13 +17,19 @@ function addForm(req,res){
 }
 
 function addSkill(req,res){
-    console.log(req.body);
     Skill.addSkill(req.body);
+    res.redirect('/skills');
+}
+
+function removeSkill(req,res){
+    console.log(req.params.id);
+    Skill.removeSkill(req.params.id);
     res.redirect('/skills');
 }
 module.exports = {
     getAllSkills,
     getSkill,
     addForm,
-    addSkill
+    addSkill,
+    removeSkill
 }

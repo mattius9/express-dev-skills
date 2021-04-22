@@ -21,8 +21,14 @@ function addSkill(skill,difficulty){
     skills.push(skill);
 }
 
+function removeSkill(id){
+    const idx = skills.findIndex(skill => skill.id === parseInt(id));
+    skills.splice(idx, 1);
+}
+
 module.exports = {
     getAll,
     getOne,
-    addSkill
+    addSkill,
+    removeSkill
 }
