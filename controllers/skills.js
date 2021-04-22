@@ -26,10 +26,21 @@ function removeSkill(req,res){
     Skill.removeSkill(req.params.id);
     res.redirect('/skills');
 }
+
+function editForm(req,res){
+    res.render('skills/editSkill', {skill: Skill.getOne(req.params.id)});
+}
+
+function editSkill(req,res){
+    Skill.editSkill(req.body);
+    res.redirect('/skills');
+}
 module.exports = {
     getAllSkills,
     getSkill,
     addForm,
     addSkill,
-    removeSkill
+    removeSkill,
+    editForm,
+    editSkill
 }

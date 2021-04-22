@@ -26,9 +26,16 @@ function removeSkill(id){
     skills.splice(idx, 1);
 }
 
+function editSkill(id, skill){
+    const idx = skills.findIndex(skill => skill.id === parseInt(id));
+    skills[idx].skill = skill;
+
+}
+
 module.exports = {
     getAll,
     getOne,
     addSkill,
-    removeSkill
+    removeSkill,
+    editSkill
 }

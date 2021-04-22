@@ -20,10 +20,11 @@ router.use( function( req, res, next ) {
 /* GET users listing. */
 router.get('/', skillsCtrl.getAllSkills);
 router.get('/new', skillsCtrl.addForm);
+router.get('/:id/edit',skillsCtrl.editForm);
 router.get('/:id', skillsCtrl.getSkill);
 router.post('/', skillsCtrl.addSkill);
-
 router.delete('/:id',skillsCtrl.removeSkill);
+router.put('/:id',skillsCtrl.editSkill);
 
 
 
