@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var skillsCtrl = require('../controllers/skills');
 
-
 router.use( function( req, res, next ) {
     // this middleware will call for each requested
     // and we checked for the requested query properties
@@ -17,7 +16,7 @@ router.use( function( req, res, next ) {
     }       
     next(); 
 });
-/* GET users listing. */
+
 router.get('/', skillsCtrl.getAllSkills);
 router.get('/new', skillsCtrl.addForm);
 router.get('/:id/edit',skillsCtrl.editForm);

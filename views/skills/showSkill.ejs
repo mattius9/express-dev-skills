@@ -11,7 +11,7 @@
     <h1>Skills List # <%= skill.id %></h1>
     <h3><%= skill.skill %></h3>
     <h3>Learned: <%= skill.learned ? 'Yes' : 'No' %></h3>
-    <a href="/skills/<%= skill.id %>?_method=DELETE">DELETE</a>
-    <a href="/skills/<%= skill.id %>/edit">EDIT</a>
+    <a href="./<%= skill.id %>?_method=DELETE">DELETE</a>
+    <a href="./<%= skill.id %>/edit">EDIT</a>
 </body>
 </html>

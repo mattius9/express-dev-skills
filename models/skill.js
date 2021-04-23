@@ -10,14 +10,15 @@ function getAll() {
     return skills;
 }
 
-function getOne(index){
-    return skills.find( ({id}) => id == index);
+function getOne(id){
+    const idx = skills.findIndex(skill => skill.id === parseInt(id));
+    return skills[idx];
 }
 
 function addSkill(skill,difficulty){
     skill.id = skills[skills.length-1].id+1;
     skill.learned = false;
-    difficulty = skill.difficulty;
+    skill.difficulty = difficulty;
     skills.push(skill);
 }
 
@@ -26,10 +27,11 @@ function removeSkill(id){
     skills.splice(idx, 1);
 }
 
-function editSkill(id, skill){
+function editSkill(id, skill,difficulty){
     const idx = skills.findIndex(skill => skill.id === parseInt(id));
     skills[idx].skill = skill;
-
+    skills[idx].difficulty = difficulty;
+    return skills[idx];
 }
 
 module.exports = {

@@ -32,8 +32,10 @@ function editForm(req,res){
 }
 
 function editSkill(req,res){
-    Skill.editSkill(req.body);
-    res.redirect('/skills');
+    var skill = Skill.editSkill(req.params.id,req.body.skill,req.body.difficulty);
+    res.redirect(`/skills/${req.params.id}`);
+    //how to get req.params.id to be passed through the redirect?
+    // Query strings?
 }
 module.exports = {
     getAllSkills,
